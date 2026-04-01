@@ -1,0 +1,10 @@
+# Python
+*__pycache__/
+*.egg-info/
+*.venv/
+
+# OS Specific
+.DS_Store
+
+# IDE Specific
+.vscode/
