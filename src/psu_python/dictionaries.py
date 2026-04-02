@@ -18,12 +18,13 @@ def delete(key: Any, d: dict) -> Any:
     Returns:
         Any: The value of the popped key.
     """
+    # explicitly check type to prevent passing list which has .pop attribute
     if not isinstance(d, dict):
         raise TypeError("d must be of type dict")
-    
-    value = d.pop(key)
 
-    if value is None:
+    try:
+        value = d.pop(key)
+    except KeyError:
         raise KeyError(f"Key \"{key}\" not in dictionary")
     
     return value
@@ -38,10 +39,10 @@ def get_keys(d: dict) -> KeysView:
     Returns:
         KeysView: A view of the keys in `d`.
     """
-    if not isinstance(d, dict):
+    try:
+        return d.keys()
+    except AttributeError:
         raise TypeError("d must be of type dict")
-    
-    return d.keys()
 
 
 def get_values(d: dict) -> ValuesView:
@@ -53,10 +54,10 @@ def get_values(d: dict) -> ValuesView:
     Returns:
         ValuesView: A view of the values in `d`.
     """
-    if not isinstance(d, dict):
+    try:
+        return d.values()
+    except AttributeError:
         raise TypeError("d must be of type dict")
-    
-    return d.values()
 
 
 def get_items(d: dict) -> ItemsView:
@@ -68,10 +69,11 @@ def get_items(d: dict) -> ItemsView:
     Returns:
         ValuesView: A view of the (key, value) tuple pairs in `d`.
     """
-    if not isinstance(d, dict):
+    try:
+        return d.items()
+    except AttributeError:
         raise TypeError("d must be of type dict")
-    
-    return d.items()
+
 
 # get key from d
 def get_value(key: Any, d: dict, default: Any = None) -> Any:
@@ -85,7 +87,7 @@ def get_value(key: Any, d: dict, default: Any = None) -> Any:
     Returns:
         Any: The value corresponding to `key`, or `default` if not in `d`.
     """
-    if not isinstance(d, dict):
+    try:
+        return d.get(key, default)
+    except AttributeError:
         raise TypeError("d must be of type dict")
-    
-    return d.get(key, default)

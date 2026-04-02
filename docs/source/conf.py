@@ -11,7 +11,7 @@ import sys
 project = "psu-python"
 copyright = "2026, Theodore Tasman"
 author = "Theodore Tasman"
-version = "0.2.3"
+version = "0.2.4"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
