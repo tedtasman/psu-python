@@ -11,7 +11,7 @@ import sys
 project = "psu-python"
 copyright = "2026, Theodore Tasman"
 author = "Theodore Tasman"
-version = "0.2.1"
+version = "0.2.2"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -34,18 +34,22 @@ html_static_path = ["_static"]
 
 html_theme_options = {
     "light_css_variables": {
-        "color-brand-primary": "#1e407c",
+        "color-brand-primary": "#001e44",
         "color-brand-content": "#001e44",
         "color-background-primary": "#ffffff",
-        "color-background-secondary": "#96BEE6",
+        "color-background-secondary": "#A2AAAD",
         "color-foreground-primary": "#001e44",
+        "color-problematic": "#009CDE",
+        "color-api-name": "#009CDE",
     },
     "dark_css_variables": {
-        "color-brand-primary": "#96BEE6",
+        "color-brand-primary": "#CCDAE6",
         "color-brand-content": "#CCDAE6",
         "color-background-primary": "#001e44",
-        "color-background-secondary": "#1e407c",
+        "color-background-secondary": "#000321",
         "color-foreground-primary": "#ffffff",
+        "color-problematic": "#009CDE",
+        "color-api-name": "#009CDE",
     },
 }
 
@@ -53,6 +57,8 @@ html_theme_options = {
 sys.path.insert(0, os.path.abspath("../../src"))
 
 # -- Autodoc configuration --------------------------------------------------
+add_module_names = False
+
 autodoc_default_options = {
     'members': True,
     'undoc-members': True,
