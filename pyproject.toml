@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name='psu-python'
-version='0.1.0'
+version='0.2.0'
 description=' A python package for abstracting python class methods behind a fully functional layer intended for educational use in CMPSC 131 at The Pennsylvania State University'
 authors=[
     {name='Theodore Tasman', email='psupython@ttasman.com'}
@@ -14,9 +14,8 @@ readme='README.md'
 dependencies=[]
 classifiers=[
     'Development Status :: 4 - Beta',
-    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
     'Programming Language :: Python :: 3',
-    'Topic :: Scientific/Engineering',
     'Operating System :: OS Independent',
     'Natural Language :: English',
 ]
