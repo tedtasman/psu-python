@@ -27,5 +27,5 @@ docs = [
 ]
 
 [project.urls]
-Homepage = 'https://github.com/tedtasman/psu-python'
+Homepage = 'https://tedtasman.github.io/psu-python/'
 
