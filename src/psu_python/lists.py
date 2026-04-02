@@ -1,6 +1,6 @@
 from typing import Any, Optional
 
-
+# "join list by separator"
 def join(lst: list, separator: str) -> str:
     """Join elements of a list into a single string, separated by a delimiter.
 
@@ -18,8 +18,8 @@ def join(lst: list, separator: str) -> str:
 
     return separator.join(lst)
 
-
-def append(lst: list, element: Any) -> None:
+# "append element to list"
+def append(element: Any, lst: list) -> None:
     """Append `element` to the end of `lst`. Modifies `lst`.
 
     Args:
@@ -30,8 +30,8 @@ def append(lst: list, element: Any) -> None:
         raise TypeError("lst must be of type list")
     lst.append(element)
 
-
-def pop_index(lst: list, index: Optional[int] = None) -> Any:
+# "pop list[index]"
+def pop(lst: list, index: Optional[int] = None) -> Any:
     """Remove and return the element at position `index` from `lst`. 
 
     Args:

@@ -1,13 +1,16 @@
 from typing import Any
 from collections.abc import KeysView, ValuesView, ItemsView
 
+# I don't love using `d` for the dictionary parameter but I'm not sure what would be better
 
-def pop_key(d: dict, key: Any) -> Any:
+# delete key from d
+# this is really just d.pop(key), but I can't call it pop because that collides with the list version
+def delete(key: Any, d: dict) -> Any:
     """Remove `key` from dictionary `d` and return its value.
 
     Args:
-        d (dict): The dictionary to remove from.
         key (Any): The list index for the element to remove.
+        d (dict): The dictionary to remove from.
 
     Raises:
         KeyError: `key` must exist within `d`.
@@ -70,13 +73,13 @@ def get_items(d: dict) -> ItemsView:
     
     return d.items()
 
-
-def get_value(d: dict, key: Any, default: Any = None) -> Any:
+# get key from d
+def get_value(key: Any, d: dict, default: Any = None) -> Any:
     """Get the value corresponding to `key` from `d`. If `key` is not in `d`, returns `default`.
 
     Args:
+        key (Any): the key to get from `d`.
         d (dict): the dictionary to check for `key`.
-        key (Any): the key to get from `d`
         default (Any, optional): the value to return if `key` is not in `d`. If not specified, defaults to `None`.
 
     Returns:

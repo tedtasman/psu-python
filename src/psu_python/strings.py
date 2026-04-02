@@ -1,6 +1,6 @@
 from typing import Optional
 
-
+# split string by sep
 def split(string: str, sep: Optional[str] = None, maxsplit: int = -1) -> list[str]:
     """Create a list of words in `string` separated by `sep`.
 
