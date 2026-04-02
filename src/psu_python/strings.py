@@ -12,9 +12,31 @@ def split(string: str, sep: Optional[str] = None, maxsplit: int = -1) -> list[st
     Returns:
         list: A list containing the words after splitting.
     """
-    if not isinstance(string, str):
-        raise TypeError("string must be of type str")
-    if not isinstance(sep, str) and sep is not None:
+    # explicitly check argument types since they cannot be differentiated via duck typing (both TypeError)
+    if sep is not None and not isinstance(sep, str):
         raise TypeError("separator must be of type str")
-    
-    return string.split(sep, maxsplit)
+    if not isinstance(maxsplit, int):
+        raise TypeError("maxsplit must be of type int")
+
+    try:
+        return string.split(sep, maxsplit)
+    except AttributeError as exc:
+        raise TypeError("string must be of type str") from exc
+
+
+def strip(string: str, chars: Optional[str] = None) -> str:
+    """Remove characters in `chars` from beginning and end of `string`.
+
+    Args:
+        string (str): the string to strip.
+        chars (str, optional): string of characters to strip. If not specified or `None`, strips whitespace.
+
+    Returns:
+        str: a new string with characters stripped.
+    """
+    try:
+        return string.strip(chars)
+    except AttributeError:
+        raise TypeError("string must be of type str")
+    except TypeError:
+        raise TypeError("chars must be None or of type str")
