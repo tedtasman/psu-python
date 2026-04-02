@@ -6,7 +6,7 @@ def process_text(text: str) -> str:
     words = split(text)
     i = 2
     while i < len(words):
-        pop_index(words, i)
+        pop(words, i)
         i += 2
     
     return join(words, ",")
@@ -18,7 +18,7 @@ def difference_dicts(dict1: dict, dict2: dict) -> dict:
     diff_dict = {}
 
     for key, value in get_items(dict1):
-        diff_dict[key] = value - get_value(dict2, key, 0)
+        diff_dict[key] = value - get_value(key, dict2, 0)
     
     for key, value in get_items(dict2):
         if key not in diff_dict:
@@ -27,10 +27,10 @@ def difference_dicts(dict1: dict, dict2: dict) -> dict:
     negatives = []
     for key, value in get_items(diff_dict):
         if value < 0:
-            append(negatives, key)
+            append(key, negatives)
     
     for key in negatives:
-        pop_key(diff_dict, key)
+        delete(key, diff_dict)
 
     return diff_dict
 
