@@ -1,6 +1,6 @@
 # PSU Python
 
-A python package for abstracting python class methods behind a fully functional layer. Intended for educational use in CMPSC 131 at The Pennsylvania State University
+A python package for abstracting python class methods behind a fully functional layer. Intended for educational use in CMPSC 131 at The Pennsylvania State University. [Packaged for distribution on PyPi](https://pypi.org/project/psu-python/)
 
 ## Usage
 
