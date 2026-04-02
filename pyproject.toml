@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name='psu-python'
-version='0.2.2'
+version='0.2.3'
 description='A python package for abstracting python class methods behind a fully functional layer intended for educational use in CMPSC 131 at The Pennsylvania State University'
 authors=[
     {name='Theodore Tasman', email='psupython@ttasman.com'}
@@ -20,6 +20,7 @@ classifiers=[
     'Natural Language :: English',
 ]
 
+[project.optional-dependencies]
 docs = [
     "sphinx>=4.0.0",
     "furo",
